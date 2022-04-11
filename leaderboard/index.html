@@ -1,0 +1,56 @@
+---
+layout: default
+title: Leaderboard - Flappy Bird
+description: The Flappy Bird leaderboard. Play Flappy Bird for free online in HTML5
+menu: leaderboard
+bootstrap: true
+---
+</head>
+<body>
+
+    {% include nav.html %}
+
+    <script>
+    $(function() {
+        listScores()
+    })
+    </script>
+
+    <div class="container">
+        <div id="fb-root"></div>
+        <br>
+        <div class="row">
+
+            <div class="col-md-6 col-md-offset-3">
+                <div style="font-family: monospace; font-size: 11px;">
+                    cheaters beware :)
+                </div>
+                <h2>
+                    Flappy Bird Leaderboard
+                    <br>
+                    <small>Top 10 scores in the last hour</small>
+                </h2>
+
+                <table class="table table-bordered hour">
+                    <tr class="loading">
+                        <td colspan="2" class="center">
+                            Loading...
+                        </td>
+                    </tr>
+                </table>
+
+                <h2>
+                    <small>Top 40 scores in the last 24 hours</small>
+                </h2>
+
+                <table class="table table-bordered day">
+                    <tr class="loading">
+                        <td colspan="2" class="center">
+                            Loading...
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>

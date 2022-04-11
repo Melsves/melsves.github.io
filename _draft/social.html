@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Play Flappy Bird</title>
+        <meta name="description" content="Play Flappy Bird for free online in HTML5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="preloadjs-NEXT.min.js"></script>
+        <script src="http://code.createjs.com/createjs-2013.09.25.min.js"></script>
+        <script src="ndgmr.Collision.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>
+        <meta name="google-site-verification" content="-4F7qHkO2bPmzbdg5OYmG9Ig4lCASIww4qXGlECOu0Q" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="apple-touch-icon-precomposed" href="img/apple-icon.png"/>
+        <!-- http://www.dafont.com/04b-19.font?text=Flappy+Bird -->
+
+        <style type="text/css">
+
+            @font-face {
+                font-family: 'Flappy Bird';
+                src: url('fonts/FB.eot');
+                src: url('fonts/FB.eot?#iefix') format('embedded-opentype'),
+                     url('fonts/FB.woff') format('woff'),
+                     url('fonts/FB.ttf') format('truetype'),
+                     url('fonts/FB.svg#04b_19regular') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+            body, html {
+                margin: 0px;
+                padding: 0px;
+                text-align: center;
+                height: 100%;
+                overflow: hidden;
+                font-family: 'helvetica';                
+            }
+            a {
+                color: green;
+            }
+            canvas {
+                position: relative;
+                margin-bottom: -4px;
+                max-height: 100%;
+                max-width: 100%;
+                z-index: 1;
+            }
+            .info {
+                position: fixed;
+                bottom: 0px;
+                width: 190px;
+                left: 0px;
+            }
+            /*iframe {
+                position: fixed;
+                top: 0px;
+                left: 50%;
+                margin-left: -76px;
+                z-index: 2;
+            }*/
+            .filler {
+                width: 100%;
+                height: 0px;
+            }
+            .top.filler {
+                background-color: ;
+            }
+            .bottom.filler {
+                background-color: ;
+            }
+
+            .ad-container {
+                z-index: 0;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                width: 160px;
+            }
+
+
+            .mobile-ad {
+                display: none;
+            }
+
+            @media (max-width:768px){
+                .ad-container {
+                    display: none;
+                }
+                .mobile-ad {
+                    position: fixed;
+                    bottom: 0px;
+                    width: 100%;
+                    height: 50px;
+                    left: 0px;
+                    text-align: center;
+                    display: block;
+                    z-index: 10;
+                }
+            }
+
+            .social {
+                display: none;
+                position: fixed;
+                z-index: 11;
+                overflow: hidden;
+            }
+        </style>
+
+        <script type="text/javascript">
+
+            window.onerror = function(message, file, line) {
+                ga('send', 'event',  'JS Error', file + ':' + line + '\n\n' + message)
+            };
+
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-47910027-1', 'flappybird.io');
+            ga('send', 'pageview');
+
+            // for a rainy day, this allows for an iphone5 compatible view
+            // var outerPadding = (1362 - 1024)/2;
+            var outerPadding = 0
+
+            function setHeight() {
+                // if ($('canvas').height() < $(window.top).height()) {
+                    var difference = $(window.top).height() - $('canvas').height()
+                    $('canvas').css({marginTop : difference/2})
+                // }
+            }
+            $(window).resize(function() {
+                setHeight()
+            })
+            
+        </script>
+        <script src="game.js"></script>
+
+    </head>
+    <body onload="init();">
+<!--         <a href="https://twitter.com/MaxMcDonnell" class="twitter-follow-button" data-show-count="false">Follow @MaxMcDonnell</a>
+
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+ -->        
+
+        <div class="top filler"></div>
+        <canvas id="testCanvas" width="768" height="1024"></canvas>
+        <div class="bottom filler"></div>
+        <div class="info">Play flappy bird here online for free. Site created by <a href="http://twitter.com/maxmcdonnell">@maxmcdonnell</a></div>
+
+
+        <div class="ad-container">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Flappy Bird -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:160px;height:600px"
+                 data-ad-client="ca-pub-9834689458849670"
+                 data-ad-slot="9640009947"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="mobile-ad">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Flappy Bird Mobile -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:320px;height:50px"
+                 data-ad-client="ca-pub-9834689458849670"
+                 data-ad-slot="1977142349"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52f8d10a50a4080c"></script>
+        <script type="text/javascript">
+          addthis.layers({
+            'theme' : 'light',
+            'share' : {
+              'position' : 'left',
+              'numPreferredServices' : 3,
+              'mobile' : false
+            }
+          });
+        </script>
+
+        <iframe src="" frameborder="0" class="social"></iframe>
+
+
+    </body>
+</html>

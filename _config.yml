@@ -1,0 +1,14 @@
+source: .
+include:     []
+exclude:     ['Gemfile','Gemfile.lock','readme.md']
+gems:        []
+timezone:    nil
+encoding:    utf-8
+
+assets:
+  js_compressor:  yui
+  css_compressor:  sass
+  baseurl: /assets/
+
+baseurl:     /
+url:         http://flappybird.io

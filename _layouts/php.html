@@ -1,0 +1,33 @@
+<?php
+
+//First we'll see if there are any cookies for this visitor
+//Fetch cookies
+// $visits = $_COOKIE['visits'];
+
+//If there's no visits cookie present, we set visits variable to zero
+// if (!isset($visits)) {$visits = 0;}
+
+//Increment visits variable by one
+// $visits++;
+
+//Set cookie with updated number of visits, and an expiry date of 10 years
+// setcookie('visits', $visits, time()+315360000);
+
+//Catch specific visits numbers and divert or include other pages if necessary
+
+//This code redirects 1st time visitors
+// if ($visits < 2) {header("Location: http://do.flappybird.io/welcome");}
+
+// This code redirects 2nd time visitors
+// if ($visits == 3) {header("Location: http://do.flappybird.io/welcome");}
+
+// This code redirects someone who has visited 10 times or more, even numbered visits only
+//if ($visits > 9 && $visits % 2 == 0) {header("Location: http://flappybird.io/welcomeback");}
+
+?>
+
+{% include header.html %}
+
+{{ content }}
+
+{% include footer.html %}

@@ -1,0 +1,252 @@
+@font-face {
+    font-family: 'Flappy Bird';
+    src: url('/fonts/FB.eot');
+    src: url('/fonts/FB.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/FB.woff') format('woff'),
+         url('/fonts/FB.ttf') format('truetype'),
+         url('/fonts/FB.svg#04b_19regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body, html {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    height: 100%;
+    /*overflow: hidden;*/
+}
+body {
+    margin-bottom: 100px;
+}
+
+.hide {
+  display: none !important;
+}
+
+canvas {
+    position: relative;
+    margin: 0px auto;
+    margin-bottom: -4px;
+    z-index: 1;
+/*    border-radius: 5px;
+    box-shadow: 0px 0px 10px #999;
+    background-color: #999;*/
+    width: 480px;
+    /*height: 733px;*/
+}
+
+.welcome {
+    .btn {
+      display: inline-block;
+      margin-bottom: 0;
+      font-weight: normal;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      background-image: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      padding: 8px 12px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      border-radius: 4px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .btn:focus,
+    .btn:active:focus,
+    .btn.active:focus {
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
+    }
+    .btn:hover,
+    .btn:focus {
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .btn:active,
+    .btn.active {
+      outline: 0;
+      background-image: none;
+      -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    }
+    .btn-primary {
+      color: #ffffff;
+      background-color: #7a8288;
+      border-color: #7a8288;
+    }
+    .btn-success {
+      color: #ffffff;
+      background-color: #62c462;
+      border-color: #62c462;
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+.error {
+    display: none;
+}
+
+.info {
+    position: fixed;
+    bottom: 0px;
+    width: 190px;
+    left: 0px;
+}
+/*iframe {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    margin-left: -76px;
+    z-index: 2;
+}*/
+.filler {
+    width: 100%;
+    height: 0px;
+}
+/*.top.filler {
+    background-color: ;
+}
+.bottom.filler {
+    background-color: ;
+}
+*/
+.canvas-container {
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.ad-container, .pre-roll {
+    z-index: 0;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    width: 160px;
+}
+.ad-container.left {
+    left: 10px;
+}
+
+
+.blog-link {
+    text-align: left;
+    height: 20px;
+    width: 200px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 3;
+}
+
+.mobile-ad {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    z-index: 10;
+    height: 50px;
+    text-align: center;
+}
+
+h1.navbar-brand {
+    margin: 0px;
+    text-indent: -10000px;
+    background: url('/img/logo.png') center no-repeat;
+    width: 120px;
+    display: block;
+}
+
+ul.mobile-menu {
+    list-style: none;
+}
+
+ul.mobile-menu a {
+    text-decoration: underline;
+}
+
+ul.mobile-menu li {
+    display: inline;
+}
+
+.score {
+    font-family: 'Flappy Bird';
+    font-size: 110px;
+}
+
+/*ABOUT*/
+
+.press img {
+    width: 150px;
+    padding: 10px;
+}
+.press a:hover {
+    text-decoration: none;
+}
+
+.day td:nth-child(2), .hour td:nth-child(2) {
+    width: 12%;
+}
+
+
+/*PANEL*/
+
+@media (min-width:1200px){
+    .panel.home {
+        max-width: 300px;
+        margin: 0px auto;
+    }
+}
+/*768px*/
+
+@media (max-width:768px){
+
+    .ad-container {
+        display: none;
+    }
+    .mobile-ad {
+        display: block;
+    }
+    .mobile-ad.larger {
+        height: 60px;
+        z-index: 11;
+    }
+    canvas {
+        /*margin-left: -15px;*/
+    }
+}
+
+/*Width of game*/
+@media (max-width:550px){ 
+
+    canvas {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width:468px){
+    .mobile-ad.larger {
+        display: none;
+    }
+    .mobile-ad {
+        display: block;
+    }
+}
+
+
+td,
+th {
+  word-break: break-word;
+}

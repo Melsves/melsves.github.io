@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Play Flappy Bird</title>
+        <meta name="description" content="Play Flappy Bird for free online in HTML5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://flappybird.io/bootstrap.min.css" type="text/css" charset="utf-8">
+        <script src="http://flappybird.io/preloadjs-NEXT.min.js"></script>
+        <script src="http://code.createjs.com/createjs-2013.09.25.min.js"></script>
+        <script src="http://flappybird.io/ndgmr.Collision.js"></script>
+        <script src="http://flappybird.io/game.min.js?1"></script>
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="apple-touch-icon-precomposed" href="/img/apple-icon.png"/>
+        <meta name="apple-itunes-app" content="app-id=825980864">
+
+        <link rel="stylesheet" type="text/css" href="http://flappybird.io/style.css" />
+
+
+        <script type="text/javascript">
+
+            window.onerror = function(message, file, line) {
+                ga('send', 'event',  'JS Error', file + ':' + line + '\n\n' + message)
+            };
+
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-47910027-1', 'flappybird.io');
+            ga('send', 'pageview');
+
+            var outerPadding = 0
+
+        </script>
+
+    </head>
+    <body onload="init();">
+        <div>
+            <h1 class="navbar-brand">Flappy Bird</h1>
+            <ul class="mobile-menu">
+                <li class="active"><a href="/">Game</a></li>
+                <li><a href="http://blog.flappybird.io">Blog</a></li>
+                <li><a href="http://flappybird.io/about">About</a></li>
+            </ul>
+        </div>
+        <br>
+        <canvas id="testCanvas" width="768" height="1024"></canvas>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <br>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Flappy Bird
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>Play flappy bird here online for free. Click on the screen, or use your spacebar to get started. Fly the bird as far as you can without hitting a pipe.</p>
+                            <p>
+                                Make sure to check the <a href="http://blog.flappybird.io">blog</a> for additional information and updates.
+                            </p>
+                            <p>
+                                Site and html5 game created by <a href="http://twitter.com/maxmcdonnell">@maxmcdonnell</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

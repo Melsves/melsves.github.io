@@ -1,0 +1,7 @@
+#widget-15197290 .main-stat:before {
+	content: '$';
+	font-size: 24px;
+	position: absolute;
+	left: 0px;
+	color: darkolivegreen;
+}

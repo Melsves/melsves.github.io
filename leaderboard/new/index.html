@@ -1,0 +1,49 @@
+---
+layout: default
+title: New Score - Flappy Bird
+description: The Flappy Bird leaderboard. Play Flappy Bird for free online in HTML5
+menu: leaderboard
+bootstrap: true
+---
+</head>
+<body>
+
+    {% include nav.html %}
+    <script>
+        $(function() {
+            retreiveScore()
+            $("#new").submit(function( event ) {
+                updateScore($('.name').val())
+                event.preventDefault();
+            });
+        })
+    </script>
+
+    <div class="container">
+        <div id="fb-root"></div>
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <h2>You scored:</h2>
+                <div class="score">
+                    <img src="/img/loading.gif">
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Enter your name to add your score to the leaderboard:</h4>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="alert alert-danger error"></div>
+                        <form id="new" action="#">
+                            <div class="input-group">
+                                <input type="text" class="form-control name" placeholder="Sir Flappy Bird" required="true">
+                                <span class="input-group-btn">
+                                   <button class="btn btn-default" type="submit">Submit</button>
+                                </span>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>

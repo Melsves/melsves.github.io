@@ -1,0 +1,58 @@
+body {
+    background: #f0f0f0; 
+}
+.geckometer-widget .widget-canvas .scale {
+    /*background-image: url('http://flappybird.io/gecko-img.png')*/
+}
+
+.clock-widget .time { 
+    background-color:rgb(233, 233, 233); 
+}
+
+
+.widget {
+  -webkit-box-shadow: #f0f0f0 0 0 8px;
+  -moz-box-shadow: #f0f0f0 0 0 8px;
+  box-shadow: #f0f0f0 0 0 8px; }
+  .widget .widget-inner {
+    border: solid 1px #e5e5e5;
+    background-color: white; }
+    .widget .widget-inner > header {
+      background-color: whitesmoke; }
+      .widget .widget-inner > header h1 {
+        color: #8b8b8b;
+        text-shadow: 1px 1px white; }
+    .widget .widget-inner > footer {
+      color: #555555;
+      background-color: whitesmoke;
+      text-shadow: 1px 1px white; }
+  .widget .widget-body {
+    color: #666666;
+    text-shadow: 1px 1px white; }
+    .widget .widget-body .t-secondary {
+      color: #969696; }
+  .widget .widget-actions a:hover {
+    background-color: gainsboro; }
+
+
+.map-widget path {
+    fill: #e0e0e0 !important;
+    stroke: #d5d5d5 !important; 
+    }
+
+.map-widget circle {
+  /*    fill: #b940ff !important; */
+      fill: #78ab49 !important; 
+    }
+
+/*.highchart-widget path {
+    stroke: #78ab49 !important;
+}
+*/  
+.text-widget .widget-canvas .slide-pagination {
+    background-color:rgb(233, 233, 233); 
+    }
+  
+.widget {
+    background-color: whitesmoke;
+    }
