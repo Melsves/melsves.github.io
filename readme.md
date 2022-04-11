@@ -1,7 +1,5 @@
 ## HTML5 Flappy Bird
 
-Site: http://flappybird.io
-
 Written using canvasJS. Images and motion replicated as much as possible from the initial app. 
 
 Served using Jekyll with jekyll-assets using yui-compressor
